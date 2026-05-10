@@ -1,0 +1,13 @@
+{
+  "name": "bedrock-bridge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "firebase-admin": "^13.9.0"
+  }
+}
