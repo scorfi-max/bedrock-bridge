@@ -19,18 +19,17 @@ app.get("/", (req, res) => {
   res.send("Bedrock Bridge Server is running");
 });
 
-// 테스트 API (Firestore 확인용)
-app.get("/test", async (req, res) => {
-  await db.collection("players").doc("test").set({
-    level: 1,
-    coins: 100,
-    nickname: "test"
-  });
-
-  res.send("Firestore OK");
+// 테스트용
+app.get("/", (req, res) => {
+  res.send("OK SERVER RUNNING");
 });
 
-// 서버 실행 (이게 핵심)
+// 맵에서 호출 테스트용
+app.post("/ping", (req, res) => {
+  console.log("PING RECEIVED:", req.body);
+  res.json({ result: "pong" });
+});
+
 app.listen(3000, () => {
-  console.log("Server running on port 3000");
+  console.log("Server running");
 });
